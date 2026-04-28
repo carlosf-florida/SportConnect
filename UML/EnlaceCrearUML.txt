@@ -1,0 +1,1 @@
+https://plantuml.github.io/plantuml/js-plantuml/index.html
