@@ -1,0 +1,133 @@
+@startuml
+
+class ROLES {
+  +id : int
+  nombre : varchar
+
+  --
+  +crearRol()
+  +editarRol()
+  +eliminarRol()
+}
+
+class USUARIOS {
+  +id : int
+  nombre : varchar
+  apellido : varchar
+  nick : varchar
+  email : varchar
+  password : varchar
+  rol_id : int
+  fecha_creacion : timestamp
+
+  --
+  +registrarse()
+  +login()
+  +logout()
+  +actualizarPerfil()
+  +cambiarPassword()
+}
+
+class CLASES {
+  +id : int
+  titulo : varchar
+  descripcion : text
+  deporte : varchar
+  profesor_id : int
+  es_premium : boolean
+  precio : decimal
+  fecha_creacion : timestamp
+
+  --
+  +crearClase()
+  +editarClase()
+  +eliminarClase()
+  +publicarClase()
+}
+
+class SUSCRIPCIONES {
+  +id : int
+  usuario_id : int
+  clase_id : int
+  fecha_suscripcion : timestamp
+
+  --
+  +suscribirse()
+  +cancelarSuscripcion()
+  +verificarEstado()
+}
+
+class PAGOS {
+  +id : int
+  usuario_id : int
+  clase_id : int
+  monto : decimal
+  fecha_pago : timestamp
+
+  --
+  +procesarPago()
+  +validarPago()
+  +generarRecibo()
+}
+
+class MENSAJES {
+  +id : int
+  remitente_id : int
+  clase_id : int
+  contenido : text
+  fecha_envio : timestamp
+
+  --
+  +enviarMensaje()
+  +editarMensaje()
+  +eliminarMensaje()
+}
+
+class PRODUCTOS {
+  +id : int
+  nombre : varchar
+  descripcion : text
+  precio : decimal
+  stock : int
+  vendedor_id : int
+  fecha_publicacion : timestamp
+
+  --
+  +crearProducto()
+  +actualizarStock()
+  +editarProducto()
+  +eliminarProducto()
+}
+
+class PEDIDOS {
+  +id : int
+  comprador_id : int
+  producto_id : int
+  cantidad : int
+  total : decimal
+  fecha_pedido : timestamp
+
+  --
+  +crearPedido()
+  +calcularTotal()
+  +cancelarPedido()
+  +confirmarPedido()
+}
+
+' RELACIONES
+ROLES "1" -- "0..*" USUARIOS
+USUARIOS "1" -- "0..*" CLASES
+USUARIOS "1" -- "0..*" SUSCRIPCIONES
+CLASES "1" -- "0..*" SUSCRIPCIONES
+
+USUARIOS "1" -- "0..*" PAGOS
+CLASES "1" -- "0..*" PAGOS
+
+USUARIOS "1" -- "0..*" MENSAJES
+CLASES "1" -- "0..*" MENSAJES
+
+USUARIOS "1" -- "0..*" PRODUCTOS
+USUARIOS "1" -- "0..*" PEDIDOS
+PRODUCTOS "1" -- "0..*" PEDIDOS
+
+@enduml

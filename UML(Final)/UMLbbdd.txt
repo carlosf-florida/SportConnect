@@ -1,0 +1,95 @@
+@startuml
+
+' =======================
+' ENTIDADES
+' =======================
+
+class ROLES {
+  +id : int <<PK>>
+  nombre : varchar
+}
+
+class USUARIOS {
+  +id : int <<PK>>
+  nombre : varchar
+  apellido : varchar
+  nick : varchar
+  email : varchar
+  password : varchar
+  rol_id : int <<FK>>
+  fecha_creacion : timestamp
+}
+
+class CLASES {
+  +id : int <<PK>>
+  titulo : varchar
+  descripcion : text
+  deporte : varchar
+  profesor_id : int <<FK>>
+  es_premium : tinyint
+  precio : decimal
+  fecha_creacion : timestamp
+}
+
+class SUSCRIPCIONES {
+  +id : int <<PK>>
+  usuario_id : int <<FK>>
+  clase_id : int <<FK>>
+  fecha_suscripcion : timestamp
+}
+
+class PAGOS {
+  +id : int <<PK>>
+  usuario_id : int <<FK>>
+  clase_id : int <<FK>>
+  monto : decimal
+  fecha_pago : timestamp
+}
+
+class MENSAJES {
+  +id : int <<PK>>
+  remitente_id : int <<FK>>
+  clase_id : int <<FK>>
+  contenido : text
+  fecha_envio : timestamp
+}
+
+class PRODUCTOS {
+  +id : int <<PK>>
+  nombre : varchar
+  descripcion : text
+  precio : decimal
+  stock : int
+  vendedor_id : int <<FK>>
+  fecha_publicacion : timestamp
+}
+
+class PEDIDOS {
+  +id : int <<PK>>
+  comprador_id : int <<FK>>
+  producto_id : int <<FK>>
+  cantidad : int
+  total : decimal
+  fecha_pedido : timestamp
+}
+
+' =======================
+' RELACIONES
+' =======================
+
+ROLES "1" -- "0..*" USUARIOS : tiene
+USUARIOS "1" -- "0..*" CLASES : imparte
+USUARIOS "1" -- "0..*" SUSCRIPCIONES : realiza
+CLASES "1" -- "0..*" SUSCRIPCIONES : recibe
+
+USUARIOS "1" -- "0..*" PAGOS : efectua
+CLASES "1" -- "0..*" PAGOS : genera
+
+USUARIOS "1" -- "0..*" MENSAJES : envia
+CLASES "1" -- "0..*" MENSAJES : pertenece_a
+
+USUARIOS "1" -- "0..*" PRODUCTOS : vende
+USUARIOS "1" -- "0..*" PEDIDOS : compra
+PRODUCTOS "1" -- "0..*" PEDIDOS : incluye
+
+@enduml
