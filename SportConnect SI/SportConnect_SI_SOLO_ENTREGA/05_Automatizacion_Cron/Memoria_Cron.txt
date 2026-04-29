@@ -1,0 +1,5 @@
+Se configuró cron para automatizar las tareas de mantenimiento del servidor.
+
+Las tareas programadas realizan una copia de seguridad diaria de la base de datos SportConnect, comprueban el espacio disponible en disco, revisan la carga media del servidor y verifican el estado de los contenedores Docker.
+
+Cada tarea guarda su salida en archivos de log dentro del directorio /home/ubuntu/backups. Esto permite revisar posteriormente si los scripts se han ejecutado correctamente y detectar posibles problemas en el servidor.

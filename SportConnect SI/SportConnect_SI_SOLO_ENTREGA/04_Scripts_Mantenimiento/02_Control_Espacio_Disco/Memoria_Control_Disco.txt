@@ -1,0 +1,5 @@
+Se creó un script llamado check_disk.sh para controlar el espacio disponible en el servidor.
+
+El script obtiene el porcentaje de uso del disco principal mediante el comando df y lo compara con un límite establecido del 80%.
+
+Si el uso del disco supera ese límite, el script muestra una alerta. En caso contrario, informa de que el estado del disco es correcto. Este tipo de comprobación sirve para prevenir problemas de almacenamiento que puedan afectar al funcionamiento de SportConnect.

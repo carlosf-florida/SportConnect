@@ -1,0 +1,17 @@
+PROYECTO SI - SPORTCONNECT
+Versión final preparada para entregar
+
+Contenido incluido:
+- Hosting y servicio web en AWS EC2 con Apache.
+- Instalación y uso de Docker y Docker Compose.
+- Servicio MySQL y phpMyAdmin mediante contenedores.
+- Base de datos definitiva del proyecto: sportconnect.
+- Scripts de mantenimiento: backup, control de disco, carga media y comprobación de contenedores Docker.
+- Automatización con cron y evidencias de logs.
+
+Revisión final:
+- Se han eliminado carpetas de originales, duplicados y archivos auxiliares que no son necesarios para la entrega.
+- Se mantiene únicamente el material útil para evaluar la práctica.
+- El archivo docker-compose.yml usa la base de datos definitiva sportconnect.
+- El SQL incluido está ordenado para evitar errores con claves foráneas.
+- Los scripts .sh están preparados para ejecutarse en Linux.

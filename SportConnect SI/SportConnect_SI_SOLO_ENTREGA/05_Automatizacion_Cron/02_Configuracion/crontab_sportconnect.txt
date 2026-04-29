@@ -1,0 +1,11 @@
+# Backup diario de la base de datos SportConnect a las 02:00
+0 2 * * * /home/ubuntu/scripts/backup_sportconnect.sh >> /home/ubuntu/backups/backup.log 2>&1
+
+# Comprobación diaria del espacio en disco a las 09:00
+0 9 * * * /home/ubuntu/scripts/check_disk.sh >> /home/ubuntu/backups/disk.log 2>&1
+
+# Comprobación diaria de la carga media del servidor a las 09:10
+10 9 * * * /home/ubuntu/scripts/check_load.sh >> /home/ubuntu/backups/load.log 2>&1
+
+# Comprobación diaria de los contenedores Docker a las 09:20
+20 9 * * * /home/ubuntu/scripts/check_docker.sh >> /home/ubuntu/backups/docker.log 2>&1
