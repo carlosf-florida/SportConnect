@@ -1,0 +1,5 @@
+se creó un script llamado check_docker.sh para comprobar el estado de los contenedores Docker utilizados en el proyecto.
+
+Este script revisa si los contenedores sportconnect_mysql y sportconnect_phpmyadmin se encuentran activos. Si ambos están funcionando, muestra un mensaje de estado correcto. En caso contrario, muestra una alerta indicando qué contenedor está detenido.
+
+Este script es útil para supervisar los servicios principales del proyecto SportConnect, ya que la base de datos MySQL y phpMyAdmin dependen de Docker.

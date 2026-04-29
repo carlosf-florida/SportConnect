@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: sportconnect_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: sportconnect
+      MYSQL_USER: sportconnect_user
+      MYSQL_PASSWORD: sportconnect123
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - sportconnect_network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: sportconnect_phpmyadmin
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: sportconnect_user
+      PMA_PASSWORD: sportconnect123
+    depends_on:
+      - mysql
+    networks:
+      - sportconnect_network
+
+volumes:
+  mysql_data:
+
+networks:
+  sportconnect_network:

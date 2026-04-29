@@ -1,0 +1,5 @@
+Se creó un script llamado check_load.sh para comprobar la carga media del servidor. Este script utiliza el comando uptime para obtener la carga actual del sistema y la compara con un límite definido.
+
+Si la carga media supera el valor establecido, el script muestra un aviso de alerta. Si no lo supera, informa de que el servidor se encuentra funcionando correctamente.
+
+Este script permite supervisar el rendimiento del servidor y detectar posibles sobrecargas que puedan afectar al funcionamiento de la aplicación SportConnect.

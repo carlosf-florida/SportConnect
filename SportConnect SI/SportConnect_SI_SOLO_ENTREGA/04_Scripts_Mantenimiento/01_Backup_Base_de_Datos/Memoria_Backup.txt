@@ -1,0 +1,5 @@
+Se creó un script de mantenimiento llamado backup_sportconnect.sh encargado de realizar una copia de seguridad de la base de datos sportconnect.
+
+El script utiliza el comando mysqldump dentro del contenedor MySQL para exportar la base de datos completa. Después, el resultado se comprime automáticamente en formato .sql.gz y se guarda dentro del directorio /home/ubuntu/backups.
+
+De esta forma, el servidor puede generar copias periódicas de la base de datos para evitar la pérdida de información importante del proyecto SportConnect.

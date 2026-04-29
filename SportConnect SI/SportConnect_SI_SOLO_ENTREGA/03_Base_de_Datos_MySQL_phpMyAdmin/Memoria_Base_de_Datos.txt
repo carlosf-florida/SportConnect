@@ -1,0 +1,7 @@
+Se configuró el servicio MySQL en un contenedor Docker y se administró mediante phpMyAdmin desde el navegador usando la IP pública del servidor y el puerto 8080.
+
+La base de datos definitiva del proyecto se llama sportconnect. Esta base de datos contiene las tablas necesarias para el funcionamiento de la aplicación: roles, usuarios, clases, suscripciones, asistencias, mensajes, pagos, productos, pedidos y valoraciones.
+
+Durante la revisión se detectó que el SQL original podía dar error al importarse porque algunas tablas con claves foráneas se creaban antes que sus tablas referenciadas. Por ese motivo se añadió una versión corregida y ordenada llamada sportconnect.sql.
+
+El SQL corregido crea primero las tablas principales y después las tablas dependientes, evitando el error de claves foráneas. La importación final quedó realizada correctamente y phpMyAdmin muestra las 10 tablas de la base de datos sportconnect.

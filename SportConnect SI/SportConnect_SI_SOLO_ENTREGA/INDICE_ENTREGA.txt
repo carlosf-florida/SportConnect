@@ -1,0 +1,28 @@
+ÍNDICE DE ENTREGA - SPORTCONNECT SI
+
+1. 01_Hosting_y_Servicio_Web
+   - Capturas de EC2 y web publicada.
+   - Comandos usados para el servicio web.
+   - Memoria explicativa del hosting.
+
+2. 02_Docker_Compose
+   - Capturas de instalación y comprobación de Docker/Docker Compose.
+   - Archivo docker-compose.yml.
+   - Memoria explicativa de Docker Compose.
+
+3. 03_Base_de_Datos_MySQL_phpMyAdmin
+   - Capturas de phpMyAdmin y base de datos sportconnect.
+   - Archivo sportconnect.sql.
+   - Memoria explicativa de MySQL/phpMyAdmin.
+
+4. 04_Scripts_Mantenimiento
+   - Script de backup de base de datos.
+   - Script de control de espacio en disco.
+   - Script de control de carga media.
+   - Script de comprobación de contenedores Docker.
+   - Capturas y memorias de cada script.
+
+5. 05_Automatizacion_Cron
+   - Configuración crontab_sportconnect.txt.
+   - Capturas de cron y logs generados.
+   - Memoria explicativa de la automatización.

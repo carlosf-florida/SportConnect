@@ -1,0 +1,7 @@
+Se instaló Docker y Docker Compose en la instancia EC2 para desplegar servicios mediante contenedores.
+
+El archivo docker-compose.yml define dos servicios principales: un contenedor MySQL 8.0 para la base de datos del proyecto y un contenedor phpMyAdmin para administrar la base de datos desde el navegador.
+
+El servicio MySQL se configura con la base de datos sportconnect, el usuario sportconnect_user y una contraseña definida para la práctica. El servicio phpMyAdmin se publica en el puerto 8080 y se conecta al contenedor MySQL mediante la red interna sportconnect_network.
+
+Se comprobó el funcionamiento con el comando docker ps, verificando que los contenedores sportconnect_mysql y sportconnect_phpmyadmin estaban activos.
