@@ -1,105 +1,140 @@
 @startuml
+hide circle
+skinparam classAttributeIconSize 0
 
-class ROLES {
+' =======================
+' USUARIOS Y ROLES
+' =======================
+
+class usuarios {
   +id : int
-  nombre : varchar
-
-  --
-  +crearRol()
-  +editarRol()
-  +eliminarRol()
-}
-
-class USUARIOS {
-  +id : int
-  nombre : varchar
-  apellido : varchar
-  nick : varchar
-  email : varchar
-  password : varchar
+  nombre : string
+  apellido : string
+  nick : string
+  email : string
+  password : string
   rol_id : int
   fecha_creacion : timestamp
 
-  --
-  +registrarse()
-  +login()
-  +logout()
+  +registrar()
+  +login(email, password)
   +actualizarPerfil()
-  +cambiarPassword()
+  +eliminarCuenta()
+  +obtenerRol()
 }
 
-class CLASES {
+class roles {
   +id : int
-  titulo : varchar
+  nombre : string
+
+  +crearRol()
+  +asignarPermisos()
+  +listarUsuarios()
+}
+
+usuarios --> roles
+
+' =======================
+' CLASES
+' =======================
+
+class clases {
+  +id : int
+  titulo : string
   descripcion : text
-  deporte : varchar
+  deporte : string
   profesor_id : int
   es_premium : boolean
   precio : decimal
   fecha_creacion : timestamp
 
-  --
   +crearClase()
   +editarClase()
   +eliminarClase()
-  +publicarClase()
+  +listarAlumnos()
+  +obtenerProfesor()
 }
 
-class SUSCRIPCIONES {
+usuarios "1" <-- "0..*" clases : profesor_id
+
+' =======================
+' ASISTENCIAS
+' =======================
+
+class asistencias {
   +id : int
   usuario_id : int
   clase_id : int
-  fecha_suscripcion : timestamp
+  fecha : datetime
+  asistio : boolean
 
-  --
-  +suscribirse()
-  +cancelarSuscripcion()
-  +verificarEstado()
+  +marcarAsistencia()
+  +justificarFalta()
+  +listarPorClase()
 }
 
-class PAGOS {
-  +id : int
-  usuario_id : int
-  clase_id : int
-  monto : decimal
-  fecha_pago : timestamp
+usuarios "1" <-- "0..*" asistencias
+clases "1" <-- "0..*" asistencias
 
-  --
-  +procesarPago()
-  +validarPago()
-  +generarRecibo()
-}
+' =======================
+' MENSAJES
+' =======================
 
-class MENSAJES {
+class mensajes {
   +id : int
   remitente_id : int
   clase_id : int
   contenido : text
   fecha_envio : timestamp
 
-  --
   +enviarMensaje()
   +editarMensaje()
   +eliminarMensaje()
+  +listarPorClase()
 }
 
-class PRODUCTOS {
+usuarios "1" <-- "0..*" mensajes
+clases "1" <-- "0..*" mensajes
+
+' =======================
+' PAGOS
+' =======================
+
+class pagos {
   +id : int
-  nombre : varchar
+  usuario_id : int
+  clase_id : int
+  monto : decimal
+  fecha_pago : timestamp
+
+  +procesarPago()
+  +reembolsar()
+  +historialPagos()
+}
+
+usuarios "1" <-- "0..*" pagos
+clases "1" <-- "0..*" pagos
+
+' =======================
+' PRODUCTOS Y PEDIDOS
+' =======================
+
+class productos {
+  +id : int
+  nombre : string
   descripcion : text
   precio : decimal
   stock : int
   vendedor_id : int
   fecha_publicacion : timestamp
 
-  --
-  +crearProducto()
+  +publicarProducto()
   +actualizarStock()
-  +editarProducto()
   +eliminarProducto()
+  +listarProductos()
 }
 
-class PEDIDOS {
+class pedidos {
   +id : int
   comprador_id : int
   producto_id : int
@@ -107,27 +142,53 @@ class PEDIDOS {
   total : decimal
   fecha_pedido : timestamp
 
-  --
   +crearPedido()
-  +calcularTotal()
   +cancelarPedido()
-  +confirmarPedido()
+  +calcularTotal()
+  +listarPedidosUsuario()
 }
 
-' RELACIONES
-ROLES "1" -- "0..*" USUARIOS
-USUARIOS "1" -- "0..*" CLASES
-USUARIOS "1" -- "0..*" SUSCRIPCIONES
-CLASES "1" -- "0..*" SUSCRIPCIONES
+usuarios "1" <-- "0..*" productos
+usuarios "1" <-- "0..*" pedidos
+productos "1" <-- "0..*" pedidos
 
-USUARIOS "1" -- "0..*" PAGOS
-CLASES "1" -- "0..*" PAGOS
+' =======================
+' SUSCRIPCIONES
+' =======================
 
-USUARIOS "1" -- "0..*" MENSAJES
-CLASES "1" -- "0..*" MENSAJES
+class suscripciones {
+  +id : int
+  usuario_id : int
+  clase_id : int
+  fecha_suscripcion : timestamp
 
-USUARIOS "1" -- "0..*" PRODUCTOS
-USUARIOS "1" -- "0..*" PEDIDOS
-PRODUCTOS "1" -- "0..*" PEDIDOS
+  +suscribirse()
+  +cancelarSuscripcion()
+  +verificarActivo()
+}
+
+usuarios "1" <-- "0..*" suscripciones
+clases "1" <-- "0..*" suscripciones
+
+' =======================
+' VALORACIONES
+' =======================
+
+class valoraciones {
+  +id : int
+  usuario_id : int
+  clase_id : int
+  puntuacion : int
+  comentario : text
+  fecha : timestamp
+
+  +crearValoracion()
+  +editarValoracion()
+  +eliminarValoracion()
+  +promedioClase()
+}
+
+usuarios "1" <-- "0..*" valoraciones
+clases "1" <-- "0..*" valoraciones
 
 @enduml
