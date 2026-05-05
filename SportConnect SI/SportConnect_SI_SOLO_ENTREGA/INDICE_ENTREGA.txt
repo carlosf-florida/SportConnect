@@ -10,19 +10,14 @@
    - Archivo docker-compose.yml.
    - Memoria explicativa de Docker Compose.
 
-3. 03_Base_de_Datos_MySQL_phpMyAdmin
-   - Capturas de phpMyAdmin y base de datos sportconnect.
-   - Archivo sportconnect.sql.
-   - Memoria explicativa de MySQL/phpMyAdmin.
-
-4. 04_Scripts_Mantenimiento
+3. 03_Scripts_Mantenimiento
    - Script de backup de base de datos.
    - Script de control de espacio en disco.
    - Script de control de carga media.
    - Script de comprobación de contenedores Docker.
    - Capturas y memorias de cada script.
 
-5. 05_Automatizacion_Cron
+4. 04_Automatizacion_Cron
    - Configuración crontab_sportconnect.txt.
    - Capturas de cron y logs generados.
    - Memoria explicativa de la automatización.
