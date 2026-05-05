@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" styleClass="screen"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.sportconnect_01.controller.AdminController">
+    <children>
+        <ScrollPane fitToWidth="true" layoutX="20.0" layoutY="15.0" prefHeight="570.0" prefWidth="860.0" styleClass="transparent-scroll">
+            <content>
+                <VBox spacing="16.0" styleClass="wide-card">
+                    <children>
+                        <Label text="Panel admin" styleClass="admin-title" />
+                        <Label text="Administración completa preparada para tu base de datos: usuarios, clases, productos y configuración." wrapText="true" maxWidth="790.0" styleClass="normal-text" />
+                        <Label fx:id="resumenLabel" text="Resumen" styleClass="muted-text" />
+
+                        <VBox spacing="10.0" styleClass="section-card">
+                            <children>
+                                <Label text="Configuración de la aplicación" styleClass="section-title" />
+                                <TextField fx:id="appNombreField" promptText="Nombre de la aplicación" />
+                                <TextField fx:id="appMensajeField" promptText="Mensaje de inicio" />
+                                <TextField fx:id="appFooterField" promptText="Texto inferior" />
+                                <Button maxWidth="220.0" onAction="#onGuardarAppClick" styleClass="primary-button" text="Guardar configuración" />
+                            </children>
+                        </VBox>
+
+                        <HBox spacing="14.0">
+                            <children>
+                                <VBox prefWidth="405.0" spacing="10.0" styleClass="section-card">
+                                    <children>
+                                        <Label text="Gestión de clases" styleClass="section-title" />
+                                        <Label text="Campos clave de la tabla clases: titulo, descripcion, deporte, profesor_id, es_premium y precio." wrapText="true" styleClass="muted-text" />
+                                        <ListView fx:id="clasesListView" prefHeight="125.0" />
+                                        <TextField fx:id="claseTituloField" promptText="titulo" />
+                                        <TextArea fx:id="claseDescripcionArea" prefRowCount="3" promptText="descripcion" />
+                                        <TextField fx:id="claseDeporteField" promptText="deporte" />
+                                        <TextField fx:id="claseProfesorIdField" promptText="profesor_id" />
+                                        <TextField fx:id="claseHorarioField" promptText="horario extra para la app" />
+                                        <TextField fx:id="claseNivelField" promptText="nivel extra para la app" />
+                                        <TextField fx:id="clasePlazasField" promptText="plazas extra para la app" />
+                                        <TextField fx:id="clasePrecioField" promptText="precio" />
+                                        <CheckBox fx:id="clasePremiumCheck" text="es_premium" styleClass="normal-text" />
+                                        <HBox spacing="8.0">
+                                            <children>
+                                                <Button onAction="#onNuevaClaseClick" styleClass="primary-button" text="Añadir" />
+                                                <Button onAction="#onActualizarClaseClick" styleClass="secondary-button" text="Modificar" />
+                                                <Button onAction="#onEliminarClaseClick" styleClass="danger-button" text="Eliminar" />
+                                                <Button onAction="#onLimpiarClaseClick" styleClass="secondary-button" text="Limpiar" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+
+                                <VBox prefWidth="405.0" spacing="10.0" styleClass="section-card">
+                                    <children>
+                                        <Label text="Gestión de productos" styleClass="section-title" />
+                                        <Label text="Campos de productos: nombre, descripcion, precio, stock y vendedor_id." wrapText="true" styleClass="muted-text" />
+                                        <ListView fx:id="productosListView" prefHeight="125.0" />
+                                        <TextField fx:id="productoNombreField" promptText="nombre" />
+                                        <TextArea fx:id="productoDescripcionArea" prefRowCount="3" promptText="descripcion" />
+                                        <TextField fx:id="productoPrecioField" promptText="precio" />
+                                        <TextField fx:id="productoStockField" promptText="stock" />
+                                        <TextField fx:id="productoVendedorIdField" promptText="vendedor_id" />
+                                        <HBox spacing="8.0">
+                                            <children>
+                                                <Button onAction="#onNuevoProductoClick" styleClass="primary-button" text="Añadir" />
+                                                <Button onAction="#onActualizarProductoClick" styleClass="secondary-button" text="Modificar" />
+                                                <Button onAction="#onEliminarProductoClick" styleClass="danger-button" text="Eliminar" />
+                                                <Button onAction="#onLimpiarProductoClick" styleClass="secondary-button" text="Limpiar" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+
+                        <VBox spacing="10.0" styleClass="section-card">
+                            <children>
+                                <Label text="Gestión de usuarios" styleClass="section-title" />
+                                <Label text="Campos de usuarios: nombre, apellido, nick, email, password y rol_id. El rol se elige como Admin, Profesor o Alumno." wrapText="true" styleClass="muted-text" />
+                                <ListView fx:id="usuariosListView" prefHeight="140.0" />
+                                <HBox spacing="10.0">
+                                    <children>
+                                        <VBox spacing="8.0" prefWidth="390.0">
+                                            <children>
+                                                <TextField fx:id="usuarioNombreField" promptText="nombre" />
+                                                <TextField fx:id="usuarioApellidoField" promptText="apellido" />
+                                                <TextField fx:id="usuarioNickField" promptText="nick" />
+                                            </children>
+                                        </VBox>
+                                        <VBox spacing="8.0" prefWidth="390.0">
+                                            <children>
+                                                <TextField fx:id="usuarioEmailField" promptText="email" />
+                                                <TextField fx:id="usuarioPasswordField" promptText="password" />
+                                                <ComboBox fx:id="usuarioRolCombo" promptText="rol" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                                <HBox spacing="8.0">
+                                    <children>
+                                        <Button onAction="#onNuevoUsuarioClick" styleClass="primary-button" text="Añadir usuario" />
+                                        <Button onAction="#onActualizarUsuarioClick" styleClass="secondary-button" text="Modificar usuario" />
+                                        <Button onAction="#onEliminarUsuarioClick" styleClass="danger-button" text="Eliminar usuario" />
+                                        <Button onAction="#onLimpiarUsuarioClick" styleClass="secondary-button" text="Limpiar" />
+                                        <Button onAction="#onVolverClick" styleClass="secondary-button" text="Volver" />
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>
