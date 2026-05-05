@@ -231,9 +231,12 @@ table th {
 ========================================= */
 .foto-equipo {
   width: 100%;
+  max-width: 700px;
+  height: auto;          
   border-radius: 12px;
   border: 2px solid rgba(0, 230, 118, 0.2);
-  object-fit: cover;
+  display: block;
+  margin: 0 auto;
 }
 
 .member-card {
