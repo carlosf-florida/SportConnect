@@ -1,1 +1,0 @@
-https://25-26-alz-dam-projecte-integrat-1er-curs.atlassian.net/jira/core/projects/SPR/list?jql=project+%3D+SPR+ORDER+BY+cf%5B10019%5D+ASC&atlOrigin=eyJpIjoiMTNkOWVmY2MyY2ZiNGRkYzliOWQ4NWIwYmFhYWYwZDYiLCJwIjoiaiJ9
