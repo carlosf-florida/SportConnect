@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html","k":"18"},{"l":"org.example.sportconnect_01"},{"l":"org.example.sportconnect_01.controller"},{"l":"org.example.sportconnect_01.model"},{"l":"org.example.sportconnect_01.service"},{"l":"org.example.sportconnect_01.util"}];updateSearchResults();
