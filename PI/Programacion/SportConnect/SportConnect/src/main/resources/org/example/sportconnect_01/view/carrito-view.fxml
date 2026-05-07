@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" styleClass="screen"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.sportconnect_01.controller.CarritoController">
+    <children>
+        <Region layoutX="0" layoutY="0" prefHeight="4" prefWidth="1920"
+                style="-fx-background-color: linear-gradient(to right, transparent, #00d4ff, #6366f1, transparent);"/>
+
+        <HBox layoutX="40.0" layoutY="28.0" prefWidth="1840.0" spacing="32">
+
+            <!-- Cart items -->
+            <VBox spacing="18.0" prefWidth="1240.0" styleClass="card">
+                <Label text="Mi carrito" styleClass="title" style="-fx-font-size: 40px;"/>
+                <Label fx:id="vacioLabel" text="El carrito está vacío." styleClass="muted-text" style="-fx-font-size: 16px;"/>
+
+                <ScrollPane fitToWidth="true" prefHeight="860.0" styleClass="transparent-scroll">
+                    <content>
+                        <VBox fx:id="listaCarritoBox" spacing="14.0"/>
+                    </content>
+                </ScrollPane>
+            </VBox>
+
+            <!-- Summary + actions -->
+            <VBox spacing="18.0" prefWidth="540.0">
+                <VBox styleClass="card" spacing="20">
+                    <Label text="Resumen del pedido" styleClass="subtitle"
+                           style="-fx-font-size: 22px;"/>
+                    <Region prefHeight="1" prefWidth="460"
+                            style="-fx-background-color: rgba(0,212,255,0.15);"/>
+
+                    <HBox alignment="CENTER_LEFT" spacing="12">
+                        <Label text="Total:" styleClass="normal-text" style="-fx-font-size: 18px;"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="totalLabel" text="0.00 €"
+                               style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #00d4ff;"/>
+                    </HBox>
+
+                    <Region prefHeight="8"/>
+                    <Button prefWidth="460.0" onAction="#onComprarClick" styleClass="primary-button"
+                            text="Comprar" style="-fx-pref-height: 54; -fx-font-size: 17px;"/>
+                    <Button prefWidth="460.0" onAction="#onVaciarClick" styleClass="danger-button"
+                            text="Vaciar" style="-fx-pref-height: 50; -fx-font-size: 15px;"/>
+                    <Button prefWidth="460.0" onAction="#onVolverClick" styleClass="secondary-button"
+                            text="Tienda" style="-fx-pref-height: 50; -fx-font-size: 15px;"/>
+                </VBox>
+            </VBox>
+        </HBox>
+    </children>
+</AnchorPane>

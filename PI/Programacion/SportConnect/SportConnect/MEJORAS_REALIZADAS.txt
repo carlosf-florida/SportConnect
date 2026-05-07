@@ -1,0 +1,32 @@
+SportConnect - mejoras y correccion de conexion MySQL AWS
+
+Correccion principal aplicada:
+- El proyecto estaba intentando conectar a la IP antigua [IP ANTIGUA] porque src/main/resources/db.properties sobrescribia la IP correcta de DBUtil.java.
+- Ahora src/main/resources/db.properties usa la IP fija actual: 34.206.126.154.
+- Tambien se ha corregido target/classes/db.properties para evitar que IntelliJ use una configuracion antigua ya compilada.
+- DBUtil.java se ha mejorado para mostrar en consola la conexion real usada: host, puerto, base de datos y usuario.
+- DBUtil.java permite sobrescribir la configuracion con variables de entorno o parametros JVM si algun dia cambia la IP:
+  DB_HOST, DB_PORT, DB_DATABASE, DB_USER, DB_PASSWORD
+  -Ddb.host=... -Ddb.port=... -Ddb.database=... -Ddb.user=... -Ddb.password=...
+
+Datos configurados:
+- Host: 34.206.126.154
+- Puerto: 3306
+- Base de datos: sportconnect
+- Usuario: sportconnect_user
+- Contrasena: Sport1234!
+
+Archivos modificados para la conexion:
+- src/main/resources/db.properties
+- target/classes/db.properties
+- src/main/java/org/example/sportconnect_01/util/DBUtil.java
+- README.md
+
+Comprobaciones realizadas en este entorno:
+- Se ha verificado que no queda ninguna referencia a la IP antigua [IP ANTIGUA].
+- Se ha compilado DBUtil.java con javac 21 para actualizar target/classes/org/example/sportconnect_01/util/DBUtil.class.
+- Se ha compilado TestConexionBD.java con javac 21 para actualizar target/classes/org/example/sportconnect_01/TestConexionBD.class.
+
+No he podido ejecutar mvn clean javafx:run porque este entorno no tiene Maven instalado. En IntelliJ, al abrir el proyecto con Maven y JDK 21, debe recompilarse correctamente.
+
+Si sigue fallando desde tu ordenador, el proyecto ya apunta bien a la IP fija. Entonces el fallo estaria fuera del codigo: grupo de seguridad de AWS, puerto 3306 cerrado, contenedor MySQL apagado, Docker sin publicar -p 3306:3306 o permisos remotos del usuario MySQL.

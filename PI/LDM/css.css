@@ -12,7 +12,7 @@ h1, h2, h3, h4 {
 }
 
 a {
-  color: #00e676;
+  color: #5ecbff;
 }
 
 /* =========================================
@@ -20,7 +20,7 @@ a {
 ========================================= */
 nav.navbar {
   background-color: #0d1b2a;
-  border-bottom: 1px solid rgba(0, 230, 118, 0.2);
+  border-bottom: 1px solid rgba(94, 203, 255, 0.2);
 }
 
 .navbar-brand {
@@ -31,7 +31,7 @@ nav.navbar {
 }
 
 .navbar-brand span {
-  color: #00e676;
+  color: #5ecbff;
 }
 
 .nav-link {
@@ -39,11 +39,11 @@ nav.navbar {
 }
 
 .nav-link:hover {
-  color: #00e676 !important;
+  color: #5ecbff !important;
 }
 
 .navbar-toggler {
-  border-color: rgba(0, 230, 118, 0.4);
+  border-color: rgba(94, 203, 255, 0.4);
 }
 
 /* =========================================
@@ -61,7 +61,7 @@ nav.navbar {
 }
 
 .hero-title span {
-  color: #00e676;
+  color: #5ecbff;
 }
 
 .hero-sub {
@@ -74,7 +74,7 @@ nav.navbar {
    BOTONES
 ========================================= */
 .btn-verde {
-  background-color: #00e676;
+  background-color: #5ecbff;
   color: #0d1b2a;
   font-weight: 700;
   padding: 0.6rem 1.4rem;
@@ -86,13 +86,13 @@ nav.navbar {
 }
 
 .btn-verde:hover {
-  background-color: #00c853;
+  background-color: #42bfff;
   color: #0d1b2a;
 }
 
 .btn-outline-verde {
-  border: 2px solid #00e676;
-  color: #00e676;
+  border: 2px solid #5ecbff;
+  color: #5ecbff;
   padding: 0.6rem 1.4rem;
   border-radius: 8px;
   text-decoration: none;
@@ -101,7 +101,7 @@ nav.navbar {
 }
 
 .btn-outline-verde:hover {
-  background-color: #00e676;
+  background-color: #5ecbff;
   color: #0d1b2a;
 }
 
@@ -129,7 +129,7 @@ section:nth-child(even) {
 }
 
 .verde {
-  color: #00e676;
+  color: #5ecbff;
 }
 
 /* =========================================
@@ -137,14 +137,14 @@ section:nth-child(even) {
 ========================================= */
 .card-sc {
   background-color: #152238;
-  border: 1px solid rgba(0, 230, 118, 0.15);
+  border: 1px solid rgba(94, 203, 255, 0.15);
   border-radius: 12px;
   padding: 1.5rem;
   height: 100%;
 }
 
 .card-sc h4 {
-  color: #00e676;
+  color: #5ecbff;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
 }
@@ -166,7 +166,7 @@ section:nth-child(even) {
   font-family: 'Syne', sans-serif;
   font-size: 2.5rem;
   font-weight: 800;
-  color: #00e676;
+  color: #5ecbff;
 }
 
 .stat-label {
@@ -181,7 +181,7 @@ section:nth-child(even) {
   font-family: 'Syne', sans-serif;
   font-size: 2.5rem;
   font-weight: 800;
-  color: rgba(0, 230, 118, 0.25);
+  color: rgba(94, 203, 255, 0.25);
   line-height: 1;
 }
 
@@ -207,12 +207,12 @@ table {
 
 table th {
   background-color: #1e3254;
-  color: #00e676;
+  color: #5ecbff;
 }
 
 table td,
 table th {
-  border-color: rgba(0, 230, 118, 0.15);
+  border-color: rgba(94, 203, 255, 0.15);
   vertical-align: middle;
 }
 
@@ -222,7 +222,7 @@ table th {
 #demo video {
   width: 100%;
   border-radius: 12px;
-  border: 2px solid rgba(0, 230, 118, 0.3);
+  border: 2px solid rgba(94, 203, 255, 0.3);
   background: #000;
 }
 
@@ -234,14 +234,14 @@ table th {
   max-width: 700px;
   height: auto;          
   border-radius: 12px;
-  border: 2px solid rgba(0, 230, 118, 0.2);
+  border: 2px solid rgba(94, 203, 255, 0.2);
   display: block;
   margin: 0 auto;
 }
 
 .member-card {
   background-color: #152238;
-  border: 1px solid rgba(0, 230, 118, 0.15);
+  border: 1px solid rgba(94, 203, 255, 0.15);
   border-radius: 12px;
   padding: 1.5rem;
   text-align: center;
@@ -252,7 +252,7 @@ table th {
   height: 90px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #00e676;
+  border: 2px solid #5ecbff;
   margin: 0 auto 1rem;
   display: block;
 }
@@ -264,7 +264,7 @@ table th {
 }
 
 .member-rol {
-  color: #00e676;
+  color: #5ecbff;
   font-size: 0.85rem;
   margin-bottom: 0.8rem;
 }
@@ -284,7 +284,7 @@ table th {
 }
 
 .member-links a:hover {
-  color: #00e676;
+  color: #5ecbff;
 }
 
 /* =========================================
@@ -293,14 +293,14 @@ table th {
 .form-control,
 .form-select {
   background-color: #152238;
-  border: 1px solid rgba(0, 230, 118, 0.2);
+  border: 1px solid rgba(94, 203, 255, 0.2);
   color: #f0f4f8;
 }
 
 .form-control:focus,
 .form-select:focus {
   background-color: #1e3254;
-  border-color: #00e676;
+  border-color: #5ecbff;
   color: #f0f4f8;
   box-shadow: none;
 }
@@ -312,13 +312,13 @@ table th {
 
 aside {
   background-color: #1e3254;
-  border: 1px solid rgba(0, 230, 118, 0.2);
+  border: 1px solid rgba(94, 203, 255, 0.2);
   border-radius: 12px;
   padding: 1.5rem;
 }
 
 aside h5 {
-  color: #00e676;
+  color: #5ecbff;
 }
 
 aside p {
@@ -332,7 +332,7 @@ aside p {
 footer {
   background-color: #0a1520;
   padding: 40px 0;
-  border-top: 1px solid rgba(0, 230, 118, 0.15);
+  border-top: 1px solid rgba(94, 203, 255, 0.15);
   color: #8fa3b8;
   font-size: 0.88rem;
 }
@@ -343,7 +343,7 @@ footer a {
 }
 
 footer a:hover {
-  color: #00e676;
+  color: #5ecbff;
 }
 
 /* =========================================

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" styleClass="screen"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.sportconnect_01.controller.ProfesorPanelController">
+    <children>
+        <Region layoutX="0" layoutY="0" prefHeight="4" prefWidth="1920"
+                style="-fx-background-color: linear-gradient(to right, transparent, #6366f1, #00d4ff, transparent);"/>
+
+        <ScrollPane fitToWidth="true" layoutX="30.0" layoutY="18.0"
+                    prefHeight="1050.0" prefWidth="1860.0" styleClass="transparent-scroll">
+            <content>
+                <VBox spacing="20.0" styleClass="wide-card">
+
+                    <HBox alignment="CENTER_LEFT" spacing="20">
+                        <VBox spacing="6">
+                            <Label fx:id="profesorTituloLabel" text="Panel profesor"
+                                   styleClass="admin-title" style="-fx-font-size: 36px;"/>
+                            <Label fx:id="resumenProfesorLabel" text="" styleClass="muted-text" style="-fx-font-size: 15px;"/>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button onAction="#onVolverClick" styleClass="secondary-button"
+                                text="Inicio" style="-fx-pref-height: 44; -fx-font-size: 15px; -fx-min-width: 120;"/>
+                    </HBox>
+
+                    <Region prefHeight="1"
+                            style="-fx-background-color: rgba(99,102,241,0.25); -fx-pref-height: 1;"/>
+
+                    <HBox spacing="24.0">
+                        <!-- Class list -->
+                        <VBox prefWidth="700.0" spacing="14.0" styleClass="section-card">
+                            <Label text="Mis clases creadas" styleClass="section-title" style="-fx-font-size: 17px;"/>
+                            <ListView fx:id="clasesProfesorListView" prefHeight="700.0"/>
+                        </VBox>
+
+                        <!-- Form -->
+                        <VBox prefWidth="1080.0" spacing="14.0" styleClass="section-card">
+                            <Label text="Editar clase" styleClass="section-title" style="-fx-font-size: 17px;"/>
+
+                            <Label text="Título" styleClass="muted-text"/>
+                            <TextField fx:id="tituloField" promptText="Título de la clase" style="-fx-pref-height: 44;"/>
+
+                            <Label text="Descripción" styleClass="muted-text"/>
+                            <TextArea fx:id="descripcionArea" prefRowCount="4" promptText="Descripción"/>
+
+                            <HBox spacing="16">
+                                <VBox spacing="6" prefWidth="516">
+                                    <Label text="Deporte" styleClass="muted-text"/>
+                                    <TextField fx:id="deporteField" promptText="Deporte" style="-fx-pref-height: 44;"/>
+                                </VBox>
+                                <VBox spacing="6" prefWidth="516">
+                                    <Label text="Horario" styleClass="muted-text"/>
+                                    <TextField fx:id="horarioField" promptText="Horario" style="-fx-pref-height: 44;"/>
+                                </VBox>
+                            </HBox>
+
+                            <HBox spacing="16">
+                                <VBox spacing="6" prefWidth="334">
+                                    <Label text="Nivel" styleClass="muted-text"/>
+                                    <TextField fx:id="nivelField" promptText="Nivel" style="-fx-pref-height: 44;"/>
+                                </VBox>
+                                <VBox spacing="6" prefWidth="334">
+                                    <Label text="Plazas" styleClass="muted-text"/>
+                                    <TextField fx:id="plazasField" promptText="Plazas" style="-fx-pref-height: 44;"/>
+                                </VBox>
+                                <VBox spacing="6" prefWidth="334">
+                                    <Label text="Precio" styleClass="muted-text"/>
+                                    <TextField fx:id="precioField" promptText="0.00" style="-fx-pref-height: 44;"/>
+                                </VBox>
+                            </HBox>
+
+                            <CheckBox fx:id="premiumCheck" text="Clase premium"
+                                      styleClass="check-box" style="-fx-font-size: 15px;"/>
+
+                            <Region prefHeight="6"/>
+                            <HBox spacing="12.0">
+                                <Button onAction="#onCrearClaseClick" styleClass="primary-button"
+                                        text="Crear" prefWidth="150" style="-fx-pref-height: 48;"/>
+                                <Button onAction="#onModificarClaseClick" styleClass="secondary-button"
+                                        text="Modificar" prefWidth="160" style="-fx-pref-height: 48;"/>
+                                <Button onAction="#onEliminarClaseClick" styleClass="danger-button"
+                                        text="Eliminar" prefWidth="150" style="-fx-pref-height: 48;"/>
+                                <Button onAction="#onLimpiarClick" styleClass="secondary-button"
+                                        text="Limpiar" prefWidth="150" style="-fx-pref-height: 48;"/>
+                            </HBox>
+                        </VBox>
+                    </HBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>

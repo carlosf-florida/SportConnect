@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" styleClass="screen"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.sportconnect_01.controller.ProfesoresController">
+    <children>
+        <Region layoutX="0" layoutY="0" prefHeight="4" prefWidth="1920"
+                style="-fx-background-color: linear-gradient(to right, transparent, #00d4ff, #6366f1, transparent);"/>
+        <Region layoutX="0" layoutY="4" prefHeight="1076" prefWidth="5"
+                style="-fx-background-color: linear-gradient(to bottom, #00d4ff, transparent);"/>
+
+        <HBox layoutX="34.0" layoutY="28.0" prefWidth="1852.0" prefHeight="1024.0" spacing="28.0">
+
+            <!-- Sidebar FIJO -->
+            <VBox prefWidth="300.0" prefHeight="1024.0" spacing="14.0" styleClass="fixed-sidebar">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <VBox HBox.hgrow="ALWAYS" spacing="3">
+                        <Label text="SportConnect" styleClass="brand-title" style="-fx-font-size: 22px;"/>
+                        <Label fx:id="sidebarUserLabel" text="" styleClass="sidebar-user" style="-fx-font-size: 13px;"/>
+                    </VBox>
+                    <Button onAction="#onMiPerfilClick" text="👤 Perfil"
+                            prefWidth="90" prefHeight="36" styleClass="primary-button" style="-fx-font-size: 12px;"/>
+                </HBox>
+                <Button onAction="#onCerrarSesionClick" text="⏻  Cerrar sesión"
+                        prefWidth="270" prefHeight="36" styleClass="danger-button" style="-fx-font-size: 13px;"/>
+                <Region prefHeight="1" prefWidth="250" styleClass="soft-divider"/>
+                <Label text="Navegación rápida" styleClass="mini-title"/>
+                <Button onAction="#onVolverClick"   text="🏠  Inicio"    prefWidth="270" styleClass="nav-button" style="-fx-pref-height: 38; -fx-font-size: 13px;"/>
+                <Button onAction="#onClasesClick"   text="🏃  Clases"    prefWidth="270" styleClass="nav-button" style="-fx-pref-height: 38; -fx-font-size: 13px;"/>
+                <Button onAction="#onProductosClick" text="🛍  Tienda"   prefWidth="270" styleClass="nav-button" style="-fx-pref-height: 38; -fx-font-size: 13px;"/>
+                <Button onAction="#onCarritoClick"   text="🛒  Carrito"  prefWidth="270" styleClass="nav-button" style="-fx-pref-height: 38; -fx-font-size: 13px;"/>
+            </VBox>
+
+            <!-- Contenido principal -->
+            <VBox prefWidth="1494.0" spacing="18.0" styleClass="card">
+
+                <HBox alignment="CENTER_LEFT" spacing="20">
+                    <Label text="Profesores" styleClass="title" style="-fx-font-size: 40px;"/>
+                </HBox>
+
+                <Label text="Equipo de entrenadores de SportConnect" styleClass="normal-text" style="-fx-font-size: 16px;"/>
+                <Region prefHeight="1" prefWidth="1400"
+                        style="-fx-background-color: rgba(0,212,255,0.15);"/>
+
+                <ScrollPane fitToWidth="true" prefHeight="880.0"
+                            styleClass="transparent-scroll">
+                    <content>
+                        <VBox fx:id="listaProfesoresBox" spacing="16.0"/>
+                    </content>
+                </ScrollPane>
+            </VBox>
+        </HBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" styleClass="screen"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.sportconnect_01.controller.AdminController">
+    <children>
+        <Region layoutX="0" layoutY="0" prefHeight="4" prefWidth="1920"
+                style="-fx-background-color: linear-gradient(to right, transparent, #14b8a6, #00d4ff, transparent);"/>
+
+        <ScrollPane fitToWidth="true" layoutX="30.0" layoutY="18.0"
+                    prefHeight="1050.0" prefWidth="1860.0" styleClass="transparent-scroll">
+            <content>
+                <VBox spacing="22.0" styleClass="wide-card">
+
+                    <!-- Header -->
+                    <HBox alignment="CENTER_LEFT" spacing="20">
+                        <VBox spacing="6">
+                            <Label text="Panel admin" styleClass="admin-title" style="-fx-font-size: 36px;"/>
+                            <Label fx:id="resumenLabel" text="" styleClass="muted-text" style="-fx-font-size: 15px;"/>
+                        </VBox>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button onAction="#onVolverClick" styleClass="secondary-button"
+                                text="Inicio" style="-fx-pref-height: 44; -fx-font-size: 15px; -fx-min-width: 120;"/>
+                    </HBox>
+
+                    <Region prefHeight="1"
+                            style="-fx-background-color: rgba(20,184,166,0.25); -fx-pref-height: 1;"/>
+
+                    <!-- App config -->
+                    <VBox spacing="14.0" styleClass="section-card">
+                        <Label text="Configuración de la aplicación" styleClass="section-title" style="-fx-font-size: 17px;"/>
+                        <HBox spacing="14">
+                            <TextField fx:id="appNombreField" promptText="Nombre de la aplicación"
+                                       HBox.hgrow="ALWAYS" style="-fx-pref-height: 44;"/>
+                            <TextField fx:id="appMensajeField" promptText="Mensaje de inicio"
+                                       HBox.hgrow="ALWAYS" style="-fx-pref-height: 44;"/>
+                            <TextField fx:id="appFooterField" promptText="Texto inferior"
+                                       HBox.hgrow="ALWAYS" style="-fx-pref-height: 44;"/>
+                        </HBox>
+                        <Button maxWidth="260.0" onAction="#onGuardarAppClick" styleClass="primary-button"
+                                text="Guardar" style="-fx-pref-height: 46;"/>
+                    </VBox>
+
+                    <!-- Classes + Products -->
+                    <HBox spacing="20.0">
+                        <VBox prefWidth="900.0" spacing="12.0" styleClass="section-card">
+                            <Label text="Clases" styleClass="section-title" style="-fx-font-size: 17px;"/>
+                            <Label text="Campos usados por la base de datos de clases"
+                                   wrapText="true" styleClass="muted-text"/>
+                            <ListView fx:id="clasesListView" prefHeight="160.0"/>
+                            <TextField fx:id="claseTituloField" promptText="titulo" style="-fx-pref-height: 42;"/>
+                            <TextArea fx:id="claseDescripcionArea" prefRowCount="2" promptText="descripcion"/>
+                            <HBox spacing="10">
+                                <TextField fx:id="claseDeporteField" promptText="deporte" HBox.hgrow="ALWAYS" style="-fx-pref-height: 42;"/>
+                                <TextField fx:id="claseProfesorIdField" promptText="profesor_id" prefWidth="140" style="-fx-pref-height: 42;"/>
+                            </HBox>
+                            <HBox spacing="10">
+                                <TextField fx:id="claseHorarioField" promptText="horario" HBox.hgrow="ALWAYS" style="-fx-pref-height: 42;"/>
+                                <TextField fx:id="claseNivelField" promptText="nivel" HBox.hgrow="ALWAYS" style="-fx-pref-height: 42;"/>
+                            </HBox>
+                            <HBox spacing="10">
+                                <TextField fx:id="clasePlazasField" promptText="plazas" HBox.hgrow="ALWAYS" style="-fx-pref-height: 42;"/>
+                                <TextField fx:id="clasePrecioField" promptText="precio" HBox.hgrow="ALWAYS" style="-fx-pref-height: 42;"/>
+                            </HBox>
+                            <CheckBox fx:id="clasePremiumCheck" text="es_premium" styleClass="check-box"/>
+                            <HBox spacing="10.0">
+                                <Button onAction="#onNuevaClaseClick" styleClass="primary-button"
+                                        text="Añadir" prefWidth="120" style="-fx-pref-height: 44;"/>
+                                <Button onAction="#onActualizarClaseClick" styleClass="secondary-button"
+                                        text="Modificar" prefWidth="120" style="-fx-pref-height: 44;"/>
+                                <Button onAction="#onEliminarClaseClick" styleClass="danger-button"
+                                        text="Eliminar" prefWidth="120" style="-fx-pref-height: 44;"/>
+                                <Button onAction="#onLimpiarClaseClick" styleClass="secondary-button"
+                                        text="Limpiar" prefWidth="120" style="-fx-pref-height: 44;"/>
+                            </HBox>
+                        </VBox>
+
+                        <VBox prefWidth="900.0" spacing="12.0" styleClass="section-card">
+                            <Label text="Productos" styleClass="section-title" style="-fx-font-size: 17px;"/>
+                            <Label text="Campos usados por la base de datos de productos"
+                                   wrapText="true" styleClass="muted-text"/>
+                            <ListView fx:id="productosListView" prefHeight="160.0"/>
+                            <TextField fx:id="productoNombreField" promptText="nombre" style="-fx-pref-height: 42;"/>
+                            <TextArea fx:id="productoDescripcionArea" prefRowCount="2" promptText="descripcion"/>
+                            <HBox spacing="10">
+                                <TextField fx:id="productoPrecioField" promptText="precio" HBox.hgrow="ALWAYS" style="-fx-pref-height: 42;"/>
+                                <TextField fx:id="productoStockField" promptText="stock" HBox.hgrow="ALWAYS" style="-fx-pref-height: 42;"/>
+                            </HBox>
+                            <TextField fx:id="productoVendedorIdField" promptText="vendedor_id" style="-fx-pref-height: 42;"/>
+                            <HBox spacing="10.0">
+                                <Button onAction="#onNuevoProductoClick" styleClass="primary-button"
+                                        text="Añadir" prefWidth="120" style="-fx-pref-height: 44;"/>
+                                <Button onAction="#onActualizarProductoClick" styleClass="secondary-button"
+                                        text="Modificar" prefWidth="120" style="-fx-pref-height: 44;"/>
+                                <Button onAction="#onEliminarProductoClick" styleClass="danger-button"
+                                        text="Eliminar" prefWidth="120" style="-fx-pref-height: 44;"/>
+                                <Button onAction="#onLimpiarProductoClick" styleClass="secondary-button"
+                                        text="Limpiar" prefWidth="120" style="-fx-pref-height: 44;"/>
+                            </HBox>
+                        </VBox>
+                    </HBox>
+
+                    <!-- Users -->
+                    <VBox spacing="14.0" styleClass="section-card">
+                        <Label text="Usuarios" styleClass="section-title" style="-fx-font-size: 17px;"/>
+                        <Label text="Cambio rápido de rol: Admin / Profesor / Alumno"
+                               wrapText="true" styleClass="muted-text"/>
+                        <ListView fx:id="usuariosListView" prefHeight="160.0"/>
+                        <HBox spacing="16.0">
+                            <VBox spacing="10.0" prefWidth="890.0">
+                                <TextField fx:id="usuarioNombreField" promptText="nombre" style="-fx-pref-height: 42;"/>
+                                <TextField fx:id="usuarioApellidoField" promptText="apellido" style="-fx-pref-height: 42;"/>
+                                <TextField fx:id="usuarioNickField" promptText="nick" style="-fx-pref-height: 42;"/>
+                            </VBox>
+                            <VBox spacing="10.0" prefWidth="890.0">
+                                <TextField fx:id="usuarioEmailField" promptText="email" style="-fx-pref-height: 42;"/>
+                                <TextField fx:id="usuarioPasswordField" promptText="password" style="-fx-pref-height: 42;"/>
+                                <ComboBox fx:id="usuarioRolCombo" promptText="rol" maxWidth="880" style="-fx-pref-height: 42;"/>
+                            </VBox>
+                        </HBox>
+                        <HBox spacing="12.0">
+                            <Button onAction="#onNuevoUsuarioClick" styleClass="primary-button"
+                                    text="Añadir" style="-fx-pref-height: 46;"/>
+                            <Button onAction="#onActualizarUsuarioClick" styleClass="secondary-button"
+                                    text="Modificar" style="-fx-pref-height: 46;"/>
+                            <Button onAction="#onEliminarUsuarioClick" styleClass="danger-button"
+                                    text="Eliminar" style="-fx-pref-height: 46;"/>
+                            <Button onAction="#onLimpiarUsuarioClick" styleClass="secondary-button"
+                                    text="Limpiar" style="-fx-pref-height: 46;"/>
+                        </HBox>
+                    </VBox>
+
+                </VBox>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>

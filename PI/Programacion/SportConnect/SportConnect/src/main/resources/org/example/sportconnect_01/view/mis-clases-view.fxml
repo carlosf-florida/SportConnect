@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" styleClass="screen"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.sportconnect_01.controller.MisClasesController">
+    <children>
+        <Region layoutX="0" layoutY="0" prefHeight="4" prefWidth="1920"
+                style="-fx-background-color: linear-gradient(to right, transparent, #00d4ff, #6366f1, transparent);"/>
+        <Region layoutX="0" layoutY="4" prefHeight="1076" prefWidth="5"
+                style="-fx-background-color: linear-gradient(to bottom, #00d4ff, transparent);"/>
+
+        <HBox layoutX="34.0" layoutY="28.0" prefWidth="1852.0" prefHeight="1024.0" spacing="28.0">
+
+            <!-- Sidebar FIJO -->
+            <VBox prefWidth="300.0" prefHeight="1024.0" spacing="14.0" styleClass="fixed-sidebar">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <VBox HBox.hgrow="ALWAYS" spacing="3">
+                        <Label text="SportConnect" styleClass="brand-title" style="-fx-font-size: 22px;"/>
+                        <Label fx:id="sidebarUserLabel" text="" styleClass="sidebar-user" style="-fx-font-size: 13px;"/>
+                    </VBox>
+                    <Button onAction="#onMiPerfilClick" text="👤 Perfil"
+                            prefWidth="90" prefHeight="36" styleClass="primary-button" style="-fx-font-size: 12px;"/>
+                </HBox>
+                <Button onAction="#onCerrarSesionClick" text="⏻  Cerrar sesión"
+                        prefWidth="270" prefHeight="36" styleClass="danger-button" style="-fx-font-size: 13px;"/>
+                <Region prefHeight="1" prefWidth="250" styleClass="soft-divider"/>
+                <Label text="Navegación rápida" styleClass="mini-title"/>
+                <Button onAction="#onVolverClick"    text="🏠  Inicio"    prefWidth="270" styleClass="nav-button" style="-fx-pref-height: 38; -fx-font-size: 13px;"/>
+                <Button onAction="#onVerMasClasesClick" text="🏃  Clases" prefWidth="270" styleClass="nav-button" style="-fx-pref-height: 38; -fx-font-size: 13px;"/>
+                <Button onAction="#onProductosClick" text="🛍  Tienda"    prefWidth="270" styleClass="nav-button" style="-fx-pref-height: 38; -fx-font-size: 13px;"/>
+                <Button onAction="#onCarritoClick"   text="🛒  Carrito"   prefWidth="270" styleClass="nav-button" style="-fx-pref-height: 38; -fx-font-size: 13px;"/>
+            </VBox>
+
+            <!-- Enrolled classes list -->
+            <VBox spacing="16.0" prefWidth="1050.0" styleClass="card">
+                <HBox alignment="CENTER_LEFT" spacing="16">
+                    <Label text="Mis clases" styleClass="title" style="-fx-font-size: 38px;"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="resumenMisClasesLabel" text=""
+                           style="-fx-font-size: 14px; -fx-text-fill: #4a6080;"/>
+                </HBox>
+                <Region prefHeight="1" prefWidth="1040"
+                        style="-fx-background-color: rgba(0,212,255,0.15);"/>
+
+                <ScrollPane fitToWidth="true" prefHeight="860.0" styleClass="transparent-scroll">
+                    <content>
+                        <VBox fx:id="listaMisClasesBox" spacing="16.0"/>
+                    </content>
+                </ScrollPane>
+
+                <HBox spacing="14">
+                    <Button prefWidth="260" onAction="#onVerMasClasesClick" styleClass="primary-button"
+                            text="Buscar clases" style="-fx-pref-height: 50; -fx-font-size: 15px;"/>
+                    <Button prefWidth="200" onAction="#onVolverClick" styleClass="secondary-button"
+                            text="Inicio" style="-fx-pref-height: 50; -fx-font-size: 15px;"/>
+                </HBox>
+            </VBox>
+
+            <!-- Calendar panel -->
+            <VBox spacing="16.0" prefWidth="444.0" styleClass="card">
+                <Label text="Calendario" styleClass="subtitle" style="-fx-font-size: 26px;"/>
+                <Label text="Próximas sesiones inscritas" styleClass="muted-text" style="-fx-font-size: 15px;"/>
+                <Region prefHeight="1" prefWidth="400"
+                        style="-fx-background-color: rgba(0,212,255,0.15);"/>
+
+                <ScrollPane fitToWidth="true" prefHeight="900.0" styleClass="transparent-scroll">
+                    <content>
+                        <VBox fx:id="calendarioBox" spacing="12.0"/>
+                    </content>
+                </ScrollPane>
+            </VBox>
+        </HBox>
+    </children>
+</AnchorPane>

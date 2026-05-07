@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" styleClass="screen"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.sportconnect_01.controller.RegisterController">
+    <children>
+        <Region layoutX="0" layoutY="0" prefHeight="4" prefWidth="1920"
+                style="-fx-background-color: linear-gradient(to right, transparent, #00d4ff, #6366f1, transparent);"/>
+
+        <!-- Left decorative panel -->
+        <VBox alignment="CENTER" layoutX="0" layoutY="0" prefWidth="800" prefHeight="1080"
+              style="-fx-background-color: linear-gradient(to bottom right, #060b12, #0e1928);">
+            <Label text="◈"
+                   style="-fx-font-size: 80px; -fx-text-fill: #00d4ff;
+                          -fx-effect: dropshadow(gaussian, rgba(0,212,255,0.60), 40, 0.0, 0, 0);"/>
+            <Region prefHeight="16"/>
+            <Label text="SportConnect"
+                   style="-fx-font-size: 48px; -fx-font-weight: bold; -fx-text-fill: #f0f6ff;"/>
+            <Region prefHeight="12"/>
+            <Label text="Únete a la comunidad deportiva"
+                   style="-fx-font-size: 18px; -fx-text-fill: #4a6080;"/>
+        </VBox>
+
+        <Region layoutX="799" layoutY="0" prefWidth="2" prefHeight="1080"
+                style="-fx-background-color: linear-gradient(to bottom, transparent, rgba(0,212,255,0.30), transparent);"/>
+
+        <!-- Right: register form -->
+        <VBox alignment="CENTER" layoutX="800" layoutY="0" prefWidth="1120" prefHeight="1080"
+              style="-fx-background-color: #080d14;">
+            <VBox alignment="CENTER" spacing="0" styleClass="card"
+                  style="-fx-max-width: 600px; -fx-pref-width: 600px;">
+
+                <Label text="◈ SportConnect"
+                       style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #00d4ff;
+                              -fx-effect: dropshadow(gaussian, rgba(0,212,255,0.40), 14, 0.0, 0, 0);"/>
+                <Label text="Nueva cuenta" styleClass="subtitle" style="-fx-padding: 4 0 0 0; -fx-font-size: 20px;"/>
+                <Region prefHeight="24"/>
+                <Region prefHeight="1" prefWidth="520"
+                        style="-fx-background-color: rgba(0,212,255,0.15);"/>
+                <Region prefHeight="20"/>
+
+                <HBox spacing="16">
+                    <VBox spacing="6" prefWidth="240">
+                        <Label text="Nombre" styleClass="muted-text" style="-fx-padding: 0 0 2 2;"/>
+                        <TextField fx:id="nombreField" promptText="Nombre" styleClass="text-field"
+                                   style="-fx-pref-height: 44;"/>
+                    </VBox>
+                    <VBox spacing="6" prefWidth="240">
+                        <Label text="Apellido" styleClass="muted-text" style="-fx-padding: 0 0 2 2;"/>
+                        <TextField fx:id="apellidoField" promptText="Apellido" styleClass="text-field"
+                                   style="-fx-pref-height: 44;"/>
+                    </VBox>
+                </HBox>
+                <Region prefHeight="14"/>
+
+                <Label text="Nombre de usuario" styleClass="muted-text" style="-fx-padding: 0 0 6 2;" maxWidth="520"/>
+                <TextField fx:id="nickField" maxWidth="520.0" promptText="nick_usuario" styleClass="text-field"
+                           style="-fx-pref-height: 44;"/>
+                <Region prefHeight="14"/>
+
+                <Label text="Email" styleClass="muted-text" style="-fx-padding: 0 0 6 2;" maxWidth="520"/>
+                <TextField fx:id="correoField" maxWidth="520.0" promptText="correo@email.com" styleClass="text-field"
+                           style="-fx-pref-height: 44;"/>
+                <Region prefHeight="14"/>
+
+                <HBox spacing="16">
+                    <VBox spacing="6" prefWidth="248">
+                        <Label text="Contraseña" styleClass="muted-text" style="-fx-padding: 0 0 2 2;"/>
+                        <PasswordField fx:id="passwordField" promptText="••••••••" styleClass="password-field"
+                                       style="-fx-pref-height: 44;"/>
+                    </VBox>
+                    <VBox spacing="6" prefWidth="248">
+                        <Label text="Confirmar contraseña" styleClass="muted-text" style="-fx-padding: 0 0 2 2;"/>
+                        <PasswordField fx:id="repetirPasswordField" promptText="••••••••" styleClass="password-field"
+                                       style="-fx-pref-height: 44;"/>
+                    </VBox>
+                </HBox>
+                <Region prefHeight="14"/>
+
+                <Label text="Modo inicial" styleClass="muted-text" style="-fx-padding: 0 0 6 2;" maxWidth="520"/>
+                <ComboBox fx:id="tipoCombo" maxWidth="520.0" promptText="Alumno o profesor" styleClass="combo-box"
+                          style="-fx-pref-height: 44;"/>
+
+                <Region prefHeight="10"/>
+                <Label fx:id="mensajeLabel" text="" styleClass="error-text" maxWidth="520" wrapText="true"/>
+                <Region prefHeight="16"/>
+
+                <Button maxWidth="520.0" onAction="#onCrearCuentaClick" styleClass="primary-button"
+                        text="Crear" prefWidth="520" style="-fx-pref-height: 50; -fx-font-size: 16px;"/>
+                <Region prefHeight="10"/>
+                <Button maxWidth="520.0" onAction="#onVolverLoginClick" styleClass="secondary-button"
+                        text="Login" prefWidth="520" style="-fx-pref-height: 50; -fx-font-size: 16px;"/>
+            </VBox>
+        </VBox>
+    </children>
+</AnchorPane>

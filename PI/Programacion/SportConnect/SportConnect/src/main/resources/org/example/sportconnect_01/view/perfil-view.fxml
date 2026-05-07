@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" styleClass="screen"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.sportconnect_01.controller.PerfilController">
+    <children>
+        <Region layoutX="0" layoutY="0" prefHeight="4" prefWidth="1920"
+                style="-fx-background-color: linear-gradient(to right, transparent, #00d4ff, #6366f1, transparent);"/>
+
+        <HBox layoutX="30.0" layoutY="24.0" spacing="28.0" prefWidth="1860.0">
+
+            <!-- Left: edit profile -->
+            <VBox spacing="16.0" prefWidth="720.0" styleClass="card">
+                <HBox alignment="CENTER_LEFT" spacing="16">
+                    <Label text="Mi perfil" styleClass="title" style="-fx-font-size: 38px;"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="rolLabel" text=""
+                           style="-fx-font-size: 14px; -fx-text-fill: #00d4ff;
+                                  -fx-background-color: rgba(0,212,255,0.12);
+                                  -fx-background-radius: 20; -fx-padding: 6 16;"/>
+                </HBox>
+
+                <Region prefHeight="1" prefWidth="660"
+                        style="-fx-background-color: rgba(0,212,255,0.15);"/>
+                <Region prefHeight="8"/>
+
+                <HBox spacing="16">
+                    <VBox spacing="6" prefWidth="296">
+                        <Label text="Nombre" styleClass="muted-text" style="-fx-padding: 0 0 2 2;"/>
+                        <TextField fx:id="nombreField" styleClass="text-field" promptText="Nombre"
+                                   style="-fx-pref-height: 46;"/>
+                    </VBox>
+                    <VBox spacing="6" prefWidth="296">
+                        <Label text="Apellido" styleClass="muted-text" style="-fx-padding: 0 0 2 2;"/>
+                        <TextField fx:id="apellidoField" styleClass="text-field" promptText="Apellido"
+                                   style="-fx-pref-height: 46;"/>
+                    </VBox>
+                </HBox>
+
+                <Label text="Nombre de usuario" styleClass="muted-text" style="-fx-padding: 0 0 2 2;"/>
+                <TextField fx:id="nickField" styleClass="text-field" promptText="nick_usuario" maxWidth="620"
+                           style="-fx-pref-height: 46;"/>
+
+                <Label text="Email" styleClass="muted-text" style="-fx-padding: 0 0 2 2;"/>
+                <TextField fx:id="emailField" styleClass="text-field" promptText="correo@email.com" maxWidth="620"
+                           style="-fx-pref-height: 46;"/>
+
+                <Label text="Modo de uso" styleClass="muted-text" style="-fx-padding: 0 0 2 2;"/>
+                <ComboBox fx:id="rolCombo" maxWidth="620.0" styleClass="combo-box" style="-fx-pref-height: 46;"/>
+
+                <Label fx:id="mensajeLabel" text="" styleClass="muted-text" wrapText="true" maxWidth="620"/>
+
+                <Button maxWidth="620.0" onAction="#onGuardarClick" styleClass="primary-button"
+                        text="Guardar" prefWidth="620" style="-fx-pref-height: 52; -fx-font-size: 16px;"/>
+
+                <Region prefHeight="8"/>
+                <Region prefHeight="1" prefWidth="620"
+                        style="-fx-background-color: rgba(0,212,255,0.10);"/>
+                <Region prefHeight="8"/>
+
+                <Button maxWidth="620.0" onAction="#onVerCarritoClick" styleClass="secondary-button"
+                        text="Carrito" prefWidth="620" style="-fx-pref-height: 50; -fx-font-size: 15px;"/>
+                <Button maxWidth="620.0" onAction="#onVolverClick" styleClass="secondary-button"
+                        text="Inicio" prefWidth="620" style="-fx-pref-height: 50; -fx-font-size: 15px;"/>
+                <Button maxWidth="620.0" onAction="#onCerrarSesionClick" styleClass="danger-button"
+                        text="Salir" prefWidth="620" style="-fx-pref-height: 50; -fx-font-size: 15px;"/>
+            </VBox>
+
+            <!-- Right: purchase history -->
+            <VBox spacing="16.0" prefWidth="1100.0" styleClass="card">
+                <HBox alignment="CENTER_LEFT" spacing="16">
+                    <Label text="Historial de compras" styleClass="subtitle" style="-fx-font-size: 26px;"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="totalComprasLabel" text="Total: 0.00 €"
+                           style="-fx-font-size: 16px; -fx-text-fill: #00d4ff; -fx-font-weight: bold;"/>
+                </HBox>
+                <Region prefHeight="1" prefWidth="1040"
+                        style="-fx-background-color: rgba(0,212,255,0.15);"/>
+
+                <ScrollPane fitToWidth="true" prefHeight="900.0" styleClass="transparent-scroll">
+                    <content>
+                        <VBox fx:id="historialBox" spacing="14.0"/>
+                    </content>
+                </ScrollPane>
+            </VBox>
+        </HBox>
+    </children>
+</AnchorPane>
