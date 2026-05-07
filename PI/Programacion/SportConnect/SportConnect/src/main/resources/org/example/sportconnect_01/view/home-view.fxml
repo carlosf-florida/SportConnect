@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" styleClass="screen"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.sportconnect_01.controller.HomeController">
+    <children>
+        <Region layoutX="0" layoutY="0" prefHeight="4" prefWidth="1920"
+                style="-fx-background-color: linear-gradient(to right, transparent, #00d4ff, #6366f1, transparent);"/>
+        <Region layoutX="0" layoutY="4" prefHeight="1076" prefWidth="5"
+                style="-fx-background-color: linear-gradient(to bottom, #00d4ff, transparent);"/>
+
+        <HBox layoutX="34.0" layoutY="28.0" prefWidth="1852.0" prefHeight="1024.0" spacing="28.0">
+
+            <!-- Caja lateral SIEMPRE VISIBLE -->
+            <VBox prefWidth="430.0" prefHeight="1024.0" spacing="16.0" styleClass="fixed-sidebar">
+                <!-- Header: SportConnect + botón perfil -->
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <VBox alignment="CENTER_LEFT" spacing="4" HBox.hgrow="ALWAYS">
+                        <Label fx:id="appNameLabel" text="SportConnect" styleClass="brand-title"/>
+                        <Label fx:id="bienvenidaLabel" text="Bienvenido" styleClass="sidebar-user"/>
+                        <Label fx:id="tipoUsuarioLabel" text="" styleClass="muted-text"/>
+                    </VBox>
+                    <Button onAction="#onMiPerfilClick" text="👤 Perfil"
+                            prefWidth="100" prefHeight="40"
+                            styleClass="primary-button"
+                            style="-fx-font-size: 13px;"/>
+                </HBox>
+
+                <!-- Cerrar sesión -->
+                <Button onAction="#onCerrarSesionClick" text="⏻  Cerrar sesión"
+                        prefWidth="380" prefHeight="38"
+                        styleClass="danger-button"
+                        style="-fx-font-size: 13px;"/>
+
+                <Region prefHeight="1" prefWidth="350" styleClass="soft-divider"/>
+
+                <!-- Estadísticas -->
+                <HBox alignment="CENTER" spacing="10">
+                    <VBox alignment="CENTER" prefWidth="112" styleClass="stat-pill">
+                        <Label fx:id="statClasesLabel" text="0" styleClass="stat-number"/>
+                        <Label text="Clases" styleClass="stat-label"/>
+                    </VBox>
+                    <VBox alignment="CENTER" prefWidth="112" styleClass="stat-pill">
+                        <Label fx:id="statAlumnosLabel" text="0" styleClass="stat-number"/>
+                        <Label text="Alumnos" styleClass="stat-label"/>
+                    </VBox>
+                    <VBox alignment="CENTER" prefWidth="112" styleClass="stat-pill">
+                        <Label fx:id="statProductosLabel" text="0" styleClass="stat-number"/>
+                        <Label text="Tienda" styleClass="stat-label"/>
+                    </VBox>
+                </HBox>
+
+                <!-- Chat siempre visible -->
+                <VBox spacing="10" VBox.vgrow="ALWAYS" styleClass="chat-panel">
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label text="Chat" styleClass="mini-title"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="chatEstadoLabel" text="" styleClass="muted-text"/>
+                    </HBox>
+                    <ComboBox fx:id="chatClaseCombo" prefWidth="350" styleClass="combo-box" promptText="Clase"/>
+                    <ListView fx:id="chatListView" prefHeight="270" styleClass="chat-list"/>
+                    <HBox spacing="8">
+                        <TextField fx:id="chatMensajeField" promptText="Escribe un mensaje..." HBox.hgrow="ALWAYS"
+                                   styleClass="text-field" onAction="#onEnviarChatClick"/>
+                        <Button onAction="#onEnviarChatClick" text="Enviar" prefWidth="82" styleClass="primary-button"/>
+                    </HBox>
+                </VBox>
+            </VBox>
+
+            <!-- Contenido principal -->
+            <VBox prefWidth="1394.0" prefHeight="1024.0" spacing="20.0" styleClass="wide-card">
+                <HBox alignment="CENTER_LEFT" spacing="18">
+                    <VBox spacing="5">
+                        <Label text="Panel principal" styleClass="admin-title"/>
+                        <Label text="Accede rápido a clases, tienda, perfil y gestión." styleClass="normal-text"/>
+                    </VBox>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="roleStatusLabel" text="" styleClass="muted-text"/>
+                </HBox>
+
+                <Region prefHeight="1" prefWidth="1300" styleClass="soft-divider"/>
+
+                <!-- Botones agrupados de forma coherente -->
+                <VBox spacing="12" styleClass="section-card">
+                    <Label text="Navegación" styleClass="section-title"/>
+                    <HBox spacing="14">
+                        <Button onAction="#onProductosClick" text="🛍  Tienda"  prefWidth="300" styleClass="nav-button"/>
+                        <Button onAction="#onCarritoClick"   text="🛒  Carrito" prefWidth="300" styleClass="nav-button"/>
+                    </HBox>
+                    <HBox spacing="14">
+                        <Button onAction="#onVerClasesClick"     text="🏃  Clases"      prefWidth="300" styleClass="nav-button"/>
+                        <Button onAction="#onMisClasesClick"     text="📋  Mis clases"  prefWidth="300" styleClass="nav-button"/>
+                        <Button onAction="#onVerProfesoresClick" text="👨‍🏫  Profesores" prefWidth="300" styleClass="nav-button"/>
+                    </HBox>
+                    <HBox spacing="14">
+                        <Button fx:id="profesorButton" onAction="#onProfesorPanelClick" text="📊  Panel Profesor" prefWidth="300" styleClass="nav-button"/>
+                        <Button fx:id="adminButton"    onAction="#onAdminClick"         text="⚙  Admin"          prefWidth="300" styleClass="nav-button"/>
+                    </HBox>
+                </VBox>
+
+                <!-- Deporte del mes -->
+                <HBox spacing="18" VBox.vgrow="ALWAYS">
+                    <VBox spacing="14" prefWidth="460" styleClass="section-card">
+                        <Label text="🥊  Deporte del mes" styleClass="section-title" style="-fx-font-size: 20px;"/>
+                        <Label fx:id="deporteMesLabel" text="Boxeo"
+                               style="-fx-font-size: 42px; -fx-font-weight: bold; -fx-text-fill: #00d4ff;
+                                      -fx-effect: dropshadow(gaussian, rgba(0,212,255,0.45), 20, 0, 0, 0);"/>
+                        <Label fx:id="deporteMesDescLabel"
+                               text="Mejora tu condición física, reflejos y disciplina mental con el deporte más completo del mes."
+                               wrapText="true" styleClass="normal-text"/>
+                    </VBox>
+
+                    <VBox spacing="12" prefWidth="430" styleClass="section-card">
+                        <Label text="🏫  Clases disponibles" styleClass="section-title"/>
+                        <ScrollPane fitToWidth="true" prefHeight="260" styleClass="transparent-scroll">
+                            <content>
+                                <VBox fx:id="clasesDeporteMesBox" spacing="10"/>
+                            </content>
+                        </ScrollPane>
+                        <Button onAction="#onVerClasesClick" text="Ver todas las clases →"
+                                styleClass="secondary-button" prefWidth="380" prefHeight="38"
+                                style="-fx-font-size: 13px;"/>
+                    </VBox>
+
+                    <VBox spacing="12" prefWidth="430" styleClass="section-card">
+                        <Label text="🛍  Productos relacionados" styleClass="section-title"/>
+                        <ScrollPane fitToWidth="true" prefHeight="260" styleClass="transparent-scroll">
+                            <content>
+                                <VBox fx:id="productosDeporteMesBox" spacing="10"/>
+                            </content>
+                        </ScrollPane>
+                        <Button onAction="#onProductosClick" text="Ver toda la tienda →"
+                                styleClass="secondary-button" prefWidth="380" prefHeight="38"
+                                style="-fx-font-size: 13px;"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </HBox>
+    </children>
+</AnchorPane>
