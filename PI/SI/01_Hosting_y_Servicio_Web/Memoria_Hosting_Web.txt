@@ -4,4 +4,4 @@ En la instancia se instaló Apache como servidor web y se configuraron las regla
 
 Después de instalar Apache, se comprobó su funcionamiento accediendo desde el navegador a la IP pública del servidor. Posteriormente, se sustituyó la página por defecto de Apache por una página HTML personalizada de presentación del proyecto SportConnect.
 
-Con esto se cumple la parte de servicio hosting para web, ya que la aplicación de presentación queda publicada en un servidor dedicado para el proyecto y accesible desde el navegador mediante la IP pública.
+Con esto se cumple la parte de servicio hosting para web, ya que la aplicación de presentación queda publicada en un servidor dedicado para el proyecto y accesible desde el navegador mediante la IP pública (Fija).
