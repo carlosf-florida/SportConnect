@@ -1,5 +1,7 @@
+<img width="317" height="272" alt="image" src="https://github.com/user-attachments/assets/824f139b-80e5-4437-abe3-ce7fc3cfb91d" />
+
+
 SportConnect - Proyecto JavaFX 1º DAM
-<img width="317" height="272" alt="image" src="https://github.com/user-attachments/assets/f443eb04-eb35-4674-84cd-27cae35602c0" />
 
 Versión preparada para la base de datos sportconnect_corregido_importar.sql.
 La app usa datos en memoria para facilitar la ejecución, con modelos y pantallas adaptados a las tablas principales: roles, usuarios, clases, productos, suscripciones, pagos, pedidos y valoraciones.
