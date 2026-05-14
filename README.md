@@ -21,7 +21,7 @@ Panel admin — Gestiona configuración, clases, productos y usuarios, validando
 
 ----------------------------------------------------------------------------------------------------
 
-<img width="959" height="484" alt="image" src="https://github.com/user-attachments/assets/9753fe2f-e896-4d37-9900-ccce8c5fddb4" />
+<img width="959" height="488" alt="image" src="https://github.com/user-attachments/assets/a0b67927-5ba9-4c7b-b36c-38a9597e3ec3" />
 
 
 
