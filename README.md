@@ -1,4 +1,5 @@
-<img width="317" height="272" alt="image" src="https://github.com/user-attachments/assets/824f139b-80e5-4437-abe3-ce7fc3cfb91d" />
+<img width="413" height="197" alt="image" src="https://github.com/user-attachments/assets/0cb29f42-8c5a-44a7-9502-59237ef8ced2" />
+
 
 
 SportConnect - Proyecto JavaFX 1º DAM
