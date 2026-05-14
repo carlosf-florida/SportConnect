@@ -1,4 +1,6 @@
 SportConnect - Proyecto JavaFX 1º DAM
+<img width="317" height="272" alt="image" src="https://github.com/user-attachments/assets/f443eb04-eb35-4674-84cd-27cae35602c0" />
+
 Versión preparada para la base de datos sportconnect_corregido_importar.sql.
 La app usa datos en memoria para facilitar la ejecución, con modelos y pantallas adaptados a las tablas principales: roles, usuarios, clases, productos, suscripciones, pagos, pedidos y valoraciones.
 
@@ -19,16 +21,8 @@ Utilidad de conexión: src/main/java/.../util/DBUtil.java
 Por ahora no es obligatorio MySQL — los datos se cargan en memoria desde DataStore.java.
 
 
-Estructura principal del proyecto
-src/main/java/org/example/sportconnect_01
-├── controller/   LoginController, RegisterController, HomeController,
-│                 ClasesController, MisClasesController, ProfesoresController,
-│                 ProductosController, PerfilController,
-│                 ProfesorPanelController, AdminController
-├── model/        Usuario, ClaseDeportiva, Profesor, Producto,
-│                 Suscripcion, AppConfig
-├── service/      DataStore, Session
-└── util/         AlertUtils, DBUtil, SceneManager
+<img width="557" height="251" alt="image" src="https://github.com/user-attachments/assets/f9393ea9-132f-4775-bc5c-442a98659c10" />
+
 
 Conexión MySQL en AWS EC2
 DBUtil.java está configurado con:
