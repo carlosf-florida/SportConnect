@@ -9,8 +9,8 @@ Clases — Incluyen los campos de la tabla clases: id, titulo, descripcion, depo
 Productos — Nueva pantalla de productos con gestión desde el panel admin (nombre, descripción, precio, stock, vendedor_id).
 Panel admin — Gestiona configuración, clases, productos y usuarios, validando IDs como profesor_id y vendedor_id.
 
-Usuarios de prueba
-RolCorreoContraseñaAdminaniri@mail.com123456Profesorana@mail.com123456Alumnocarlos@mail.com123456
+<img width="544" height="179" alt="image" src="https://github.com/user-attachments/assets/c667a6af-847e-47bd-a26e-bf408580e4e5" />
+
 
 Base de datos
 
